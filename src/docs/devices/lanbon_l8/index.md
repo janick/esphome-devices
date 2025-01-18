@@ -49,13 +49,24 @@ difficulty: 2
 | GPIO32  | green   |
 | GPIO33  | blue   |
 
-### Relay (3-gang switch model)
+### Relay (L8-HS 3-gang switch model)
 
 | Pin    | Function      |
 | ------ | ------------- |
 | GPIO12  | relay #1   |
 | GPIO14  | relay #2   |
 | GPIO27  | relay #3   |
+
+### Dimmer (L8-HD dimmer model)
+
+| Pin    | Function      |
+| ------ | ------------- |
+| GPIO12  | 115200 baud 8N1 serial dimmer Tx (inverted for EU) |
+
+| Function | Serial Command | Notes |
+| -------- | -------------- | ----- |
+| Initialize | 0x20 0x20 0xEF 0x01 0x4D 0xA3 0x00 0x00 0x00 0x00 |
+| Set dimmer | 0xEF 0x02 0xNN 0xED^0xNN | 0xNN = Percent value 0..100 |
 
 ### How To Flash
 
